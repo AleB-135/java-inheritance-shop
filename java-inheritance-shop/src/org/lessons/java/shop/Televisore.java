@@ -1,14 +1,38 @@
 package org.lessons.java.shop;
 
-public class Televisore extends Prodotto {
-        protected String dimensioni;
-        protected boolean smart;
+import java.math.BigDecimal;
 
-        public Televisore(String nome, String marca, float prezzo, float iva, String dimensioni, boolean smart) {
-            super(nome, marca, prezzo, iva);
-            
-            this.dimensioni = dimensioni;
-            this.smart = smart;
+public class Televisore extends Prodotto {
+        private int pollici;
+        private boolean smartTV;
+
+        public Televisore(String nome, String marca, BigDecimal prezzo, BigDecimal iva,int pollici, boolean smartTV){
+        super(nome, marca, prezzo, iva);
+        this.pollici = pollici;
+        this.smartTV = smartTV;
         }
-                 
+        
+        public int getPollici(){
+            return this.pollici;
+        }
+
+        public void setPollici(){
+            this.pollici = pollici;
+        }
+
+
+        public boolean isSmart(){
+            return this.smartTV;
+        }
+
+        public void setIsSmart(){
+            this.smartTV = smartTV; 
+        }
+
+        @Override
+        public String toString(){
+            return super.toString() + "\nPollici : " + getPollici() + "\nSmartTV : " + isSmart();
+        }
 }
+                 
+
